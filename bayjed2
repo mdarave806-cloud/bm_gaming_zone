@@ -1,0 +1,447 @@
+:root {
+  --accent: #0B6E5F;
+  --accent-soft: #EAF5F2;
+  --ink: #16181D;
+  --muted: #4A4E57;
+  --line: #E1E0DA;
+  --line-strong: #B9BCC4;
+  --bg: #F4F3EF;
+  --card: #FFFFFF;
+  --warn-bg: #FFF1C2;
+  --warn-ink: #5C4300;
+  --ok-bg: #CDEBE3;
+  --ok-ink: #0B4F44;
+  --bad-bg: #FBDCDC;
+  --bad-ink: #7A1616;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Hind Siliguri', system-ui, sans-serif; font-size: 16px; line-height: 1.5; }
+[hidden] { display: none !important; }
+button, input, textarea { font-family: inherit; font-size: 16px; color: var(--ink); }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+a { color: var(--accent); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 3px solid #1D4ED8; outline-offset: 2px; }
+
+.top { background: var(--card); border-bottom: 1px solid var(--line); }
+.top-in { max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; flex: none; }
+.brand-name { font-size: 22px; font-weight: 700; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 56px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+.col-main { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.col-side { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font-size: 30px; line-height: 1.3; }
+.sub { margin: 6px 0 0; color: var(--muted); }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+.form { display: flex; flex-direction: column; gap: 24px; }
+.side { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.step { display: flex; flex-direction: column; gap: 10px; }
+.step-t { font-weight: 600; font-size: 17px; }
+.step-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+.muted { color: var(--muted); font-size: 14px; }
+.small { font-size: 13px; text-align: center; }
+
+input[type=text], input[type=password], input[type=datetime-local], textarea {
+  padding: 12px 14px; border: 1px solid var(--line-strong); border-radius: 10px; background: #fff; width: 100%;
+}
+textarea { resize: vertical; }
+.when input[type=datetime-local] { width: auto; padding: 10px 12px; }
+
+.drop { display: flex; align-items: center; gap: 16px; padding: 20px; border: 2px dashed var(--line-strong); border-radius: 12px; background: #FAFAF8; cursor: pointer; position: relative; }
+.drop.has { border-color: var(--accent); background: var(--accent-soft); }
+.drop.over { border-color: var(--accent); background: var(--accent-soft); }
+.drop-ic { flex: none; width: 52px; height: 52px; border-radius: 12px; background: #fff; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+.drop-tx { min-width: 0; display: flex; flex-direction: column; }
+.drop-tx b { font-weight: 600; overflow-wrap: anywhere; }
+.drop-tx small { color: var(--muted); font-size: 14px; }
+
+.pgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.pcard { display: flex; align-items: center; gap: 12px; padding: 14px; min-height: 64px; border-radius: 12px; background: #fff; border: 2px solid #D5D7DC; text-align: left; text-decoration: none; color: var(--ink); width: 100%; }
+.pcard.on { background: var(--accent-soft); border-color: var(--accent); }
+.pcard.off { background: #FAFAF8; border-style: dashed; }
+.pi { flex: none; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: #ECEBE6; color: #2A2D34; }
+.pcard.on .pi { background: var(--accent); color: #fff; }
+.pt { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.pt b { font-weight: 600; }
+.pt small { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.tick { flex: none; width: 24px; height: 24px; border-radius: 999px; border: 2px solid var(--line-strong); background: #fff; color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.pcard.on .tick { border-color: var(--accent); background: var(--accent); }
+.pgo { flex: none; font-size: 14px; font-weight: 600; color: var(--accent); }
+
+.when { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.chip { padding: 10px 18px; min-height: 44px; font-weight: 600; border-radius: 10px; border: 2px solid #D5D7DC; background: #fff; }
+.chip.on { border-color: var(--accent); background: var(--accent-soft); }
+
+.btn { padding: 12px 20px; min-height: 44px; border-radius: 10px; border: 1px solid var(--line-strong); background: #fff; font-weight: 600; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:disabled { background: #6B6F78; border-color: #6B6F78; }
+.btn.big { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; min-height: 52px; font-size: 18px; font-weight: 700; border-radius: 12px; }
+.btn.ghost { background: transparent; }
+.btn.small-btn { padding: 6px 14px; min-height: 36px; font-size: 14px; }
+.submit-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.hint { flex: 1 1 200px; }
+.bar { height: 8px; border-radius: 999px; background: #E6E5E0; overflow: hidden; }
+.bar-fill { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.err { margin: 0; color: var(--bad-ink); font-size: 15px; min-height: 0; }
+.err:empty { display: none; }
+
+.phone { position: relative; width: 224px; height: 398px; border-radius: 22px; background: #16181D; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; align-self: center; }
+.phone video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pv-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.pv-play svg { background: rgba(255,255,255,.16); border-radius: 999px; padding: 15px; box-sizing: content-box; width: 26px; height: 26px; }
+.phone.has .pv-play { display: none; }
+.pv-tx { position: relative; color: #fff; font-size: 14px; line-height: 1.45; text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+.pv-title { font-weight: 700; font-size: 15px; overflow-wrap: anywhere; }
+.pv-cap { margin-top: 4px; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+
+.history { display: flex; flex-direction: column; gap: 14px; }
+.empty { color: var(--muted); font-size: 15px; }
+.post { border-top: 1px solid #ECEBE6; padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.post:first-child { border-top: 0; padding-top: 0; }
+.post-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.post-head b { overflow-wrap: anywhere; font-weight: 600; }
+.post-meta { font-size: 13px; color: var(--muted); }
+.pl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 15px; }
+.pl .nm { font-weight: 500; min-width: 90px; }
+.pl a { font-size: 14px; }
+.perr { flex-basis: 100%; font-size: 13px; color: var(--bad-ink); overflow-wrap: anywhere; }
+.pnote { flex-basis: 100%; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.badge { font-size: 13px; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: #F1F0EC; color: #3C3F46; white-space: nowrap; }
+.badge.done { background: var(--ok-bg); color: var(--ok-ink); }
+.badge.sending, .badge.queued, .badge.scheduled { background: var(--warn-bg); color: var(--warn-ink); }
+.badge.failed { background: var(--bad-bg); color: var(--bad-ink); }
+.badge.partial { background: var(--warn-bg); color: var(--warn-ink); }
+.acts { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.login { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.login-card { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 12px; }
+.lbl { font-weight: 600; }
+
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); max-width: calc(100% - 32px); background: #16181D; color: #fff; padding: 12px 20px; border-radius: 12px; font-size: 15px; z-index: 10; }
+.toast.bad { background: var(--bad-ink); }
+'use strict';
+(function () {
+  const $ = (s) => document.querySelector(s);
+
+  const ICONS = {
+    tiktok: 'M9 18a3 3 0 1 1-3-3V5l12-2v11a3 3 0 1 1-3-3',
+    facebook: 'M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z',
+    instagram: 'M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
+    youtube: 'M3 8a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z M10 9l5 3-5 3z'
+  };
+  const PLATFORMS = [
+    { key: 'tiktok', name: 'টিকটক', sub: 'ছোট ভিডিও, ৯:১৬' },
+    { key: 'facebook', name: 'ফেসবুক পেজ', sub: 'রিল' },
+    { key: 'instagram', name: 'ইনস্টাগ্রাম', sub: 'রিলস' },
+    { key: 'youtube', name: 'ইউটিউব', sub: 'শর্টস' }
+  ];
+  const NAME = Object.fromEntries(PLATFORMS.map((p) => [p.key, p.name]));
+  const PROVIDER = { tiktok: 'tiktok', facebook: 'meta', instagram: 'meta', youtube: 'youtube' };
+  const STATUS_LABEL = {
+    scheduled: 'নির্ধারিত', sending: 'পাঠানো হচ্ছে', queued: 'অপেক্ষায়',
+    done: 'পোস্ট হয়েছে', partial: 'আংশিক', failed: 'ব্যর্থ'
+  };
+
+  const bn = (n) => String(n).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ));
+  const when = (ts) => new Date(ts).toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' });
+
+  const state = { file: null, sel: {}, later: false, status: {}, maxMb: 500, busy: false, posts: [], videoUrl: null, pollTimer: null };
+
+  async function api(url, opts) {
+    const r = await fetch(url, opts);
+    let d = {};
+    try { d = await r.json(); } catch { /* খালি উত্তর */ }
+    if (r.status === 401) { showLogin(); throw new Error('আগে লগইন করো'); }
+    if (!r.ok) throw new Error(d.error || 'সমস্যা হয়েছে');
+    return d;
+  }
+
+  let toastTimer;
+  function toast(msg, bad) {
+    const t = $('#toast');
+    t.textContent = msg;
+    t.className = 'toast' + (bad ? ' bad' : '');
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { t.hidden = true; }, 6000);
+  }
+
+  // ---------- লগইন ----------
+  function showLogin() {
+    clearInterval(state.pollTimer);
+    $('#app').hidden = true;
+    $('#login').hidden = false;
+  }
+  async function showApp() {
+    $('#login').hidden = true;
+    $('#app').hidden = false;
+    await loadStatus();
+    await loadPosts();
+    clearInterval(state.pollTimer);
+    state.pollTimer = setInterval(loadPosts, 5000);
+  }
+
+  $('#loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('#loginErr').textContent = '';
+    try {
+      await api('/api/login', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: $('#pw').value })
+      });
+      $('#pw').value = '';
+      showApp();
+    } catch (err) {
+      $('#loginErr').textContent = err.message;
+    }
+  });
+  $('#logout').addEventListener('click', async () => {
+    try { await api('/api/logout', { method: 'POST' }); } catch { /* যাই হোক */ }
+    showLogin();
+  });
+
+  // ---------- প্ল্যাটফর্ম ----------
+  async function loadStatus() {
+    const d = await api('/api/status');
+    state.status = d.platforms;
+    state.maxMb = d.maxMb;
+    for (const p of PLATFORMS) {
+      if (state.status[p.key].connected && state.sel[p.key] === undefined) state.sel[p.key] = true;
+      if (!state.status[p.key].connected) state.sel[p.key] = false;
+    }
+    renderPlatforms();
+    updateSubmit();
+  }
+
+  function renderPlatforms() {
+    $('#platforms').innerHTML = PLATFORMS.map((p) => {
+      const s = state.status[p.key] || {};
+      const icon = `<span class="pi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${ICONS[p.key]}"/></svg></span>`;
+      if (!s.connected) {
+        const small = s.note || (s.configured ? 'সংযুক্ত নয়' : 'সেটআপ বাকি (.env ফাইল)');
+        const body = `${icon}<span class="pt"><b>${p.name}</b><small>${esc(small)}</small></span>`;
+        return s.configured
+          ? `<a class="pcard off" href="/auth/${PROVIDER[p.key]}/start">${body}<span class="pgo">সংযুক্ত করো</span></a>`
+          : `<div class="pcard off">${body}</div>`;
+      }
+      const on = !!state.sel[p.key];
+      return `<button type="button" class="pcard${on ? ' on' : ''}" data-key="${p.key}" aria-pressed="${on}">${icon}<span class="pt"><b>${p.name}</b><small>${esc(s.name || p.sub)}</small></span><span class="tick">${on ? '✓' : ''}</span></button>`;
+    }).join('');
+    const n = PLATFORMS.filter((p) => state.sel[p.key]).length;
+    $('#count').textContent = bn(n) + 'টা বাছাই করা হয়েছে';
+  }
+
+  $('#platforms').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-key]');
+    if (!b || state.busy) return;
+    state.sel[b.dataset.key] = !state.sel[b.dataset.key];
+    renderPlatforms();
+    updateSubmit();
+  });
+
+  // ---------- ফাইল ও প্রিভিউ ----------
+  const fileInput = $('#file');
+  function setFile(f) {
+    if (f && !/^video\//.test(f.type)) { toast('শুধু ভিডিও ফাইল দেওয়া যাবে', true); return; }
+    if (f && f.size > state.maxMb * 1024 * 1024) { toast(`ফাইল অনেক বড় (সর্বোচ্চ ${bn(state.maxMb)} MB)`, true); return; }
+    state.file = f || null;
+    const pv = $('#pv');
+    if (state.videoUrl) { URL.revokeObjectURL(state.videoUrl); state.videoUrl = null; }
+    if (f) {
+      state.videoUrl = URL.createObjectURL(f);
+      pv.src = state.videoUrl;
+      pv.hidden = false;
+      pv.play().catch(() => {});
+      $('.phone').classList.add('has');
+      $('#dropMain').textContent = f.name;
+      $('#dropSub').textContent = bn((f.size / 1048576).toFixed(1)) + ' MB · অন্য ভিডিও দিতে আবার ক্লিক করো';
+      $('#drop').classList.add('has');
+    } else {
+      pv.removeAttribute('src');
+      pv.hidden = true;
+      $('.phone').classList.remove('has');
+      $('#dropMain').textContent = 'ভিডিও এখানে ছাড়ো বা ক্লিক করে বাছাই করো';
+      $('#dropSub').textContent = 'MP4 বা MOV, ৯:১৬ উল্টা (ভার্টিক্যাল) ভিডিও সবচেয়ে ভালো';
+      $('#drop').classList.remove('has');
+    }
+    updateSubmit();
+  }
+  fileInput.addEventListener('change', () => { if (fileInput.files[0]) setFile(fileInput.files[0]); });
+  const drop = $('#drop');
+  ['dragenter', 'dragover'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('over'); }));
+  drop.addEventListener('drop', (e) => { if (e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]); });
+
+  $('#title').addEventListener('input', () => {
+    $('#pvTitle').textContent = $('#title').value.trim() || 'এখানে তোমার ভিডিওর শিরোনাম';
+  });
+  $('#caption').addEventListener('input', () => {
+    $('#pvCap').textContent = $('#caption').value.trim() || 'ক্যাপশন লিখলে এখানে দেখা যাবে';
+  });
+
+  // ---------- সময় ----------
+  function setWhen(later) {
+    state.later = later;
+    $('#whenNow').classList.toggle('on', !later);
+    $('#whenNow').setAttribute('aria-pressed', String(!later));
+    $('#whenLater').classList.toggle('on', later);
+    $('#whenLater').setAttribute('aria-pressed', String(later));
+    const inp = $('#schedAt');
+    inp.hidden = !later;
+    if (later && !inp.value) {
+      const d = new Date(Date.now() + 3600 * 1000);
+      d.setMinutes(0, 0, 0);
+      d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+      inp.value = d.toISOString().slice(0, 16);
+    }
+    updateSubmit();
+  }
+  $('#whenNow').addEventListener('click', () => !state.busy && setWhen(false));
+  $('#whenLater').addEventListener('click', () => !state.busy && setWhen(true));
+
+  // ---------- পোস্ট পাঠানো ----------
+  function selectedKeys() { return PLATFORMS.map((p) => p.key).filter((k) => state.sel[k]); }
+
+  function updateSubmit() {
+    const keys = selectedKeys();
+    const ready = !!state.file && keys.length > 0 && !state.busy;
+    $('#submit').disabled = !ready;
+    if (!state.busy) {
+      $('#submitLabel').textContent = state.later ? 'সময়মতো পোস্টের জন্য রাখো' : 'সবখানে পোস্ট করো';
+      $('#hint').textContent = !state.file ? 'আগে একটা ভিডিও বাছাই করো'
+        : keys.length === 0 ? 'অন্তত একটা প্ল্যাটফর্ম বাছাই করো'
+        : bn(keys.length) + 'টা জায়গায় ' + (state.later ? 'নির্ধারিত সময়ে' : 'একসাথে') + ' যাবে';
+    }
+  }
+
+  $('#postForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if ($('#submit').disabled) return;
+    $('#formErr').textContent = '';
+
+    const fd = new FormData();
+    fd.append('title', $('#title').value.trim());
+    fd.append('caption', $('#caption').value.trim());
+    fd.append('platforms', JSON.stringify(selectedKeys()));
+    if (state.later) {
+      const v = $('#schedAt').value;
+      if (!v) { $('#formErr').textContent = 'পোস্টের সময় দাও'; return; }
+      fd.append('publishAt', new Date(v).toISOString());
+    }
+    fd.append('video', state.file);
+
+    state.busy = true;
+    $('#submit').disabled = true;
+    $('#bar').hidden = false;
+    $('#barFill').style.width = '0';
+    $('#submitLabel').textContent = 'আপলোড হচ্ছে...';
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/api/posts');
+    xhr.upload.onprogress = (ev) => {
+      if (!ev.lengthComputable) return;
+      const pct = Math.round((ev.loaded / ev.total) * 100);
+      $('#barFill').style.width = pct + '%';
+      $('#submitLabel').textContent = 'আপলোড হচ্ছে ' + bn(pct) + '%';
+    };
+    const finish = (err) => {
+      state.busy = false;
+      $('#bar').hidden = true;
+      if (err) $('#formErr').textContent = err;
+      updateSubmit();
+    };
+    xhr.onerror = () => finish('নেটওয়ার্কে সমস্যা, আবার চেষ্টা করো');
+    xhr.onload = () => {
+      let d = {};
+      try { d = JSON.parse(xhr.responseText); } catch { /* খালি */ }
+      if (xhr.status === 401) { finish(); showLogin(); return; }
+      if (xhr.status >= 200 && xhr.status < 300) {
+        finish();
+        toast(d.status === 'scheduled' ? 'পোস্ট নির্ধারিত হয়েছে' : 'আপলোড শেষ, এখন প্ল্যাটফর্মে পাঠানো হচ্ছে');
+        setFile(null);
+        fileInput.value = '';
+        $('#title').value = '';
+        $('#caption').value = '';
+        $('#title').dispatchEvent(new Event('input'));
+        $('#caption').dispatchEvent(new Event('input'));
+        setWhen(false);
+        loadPosts();
+      } else {
+        finish(d.error || 'সমস্যা হয়েছে');
+      }
+    };
+    xhr.send(fd);
+  });
+
+  // ---------- হিস্ট্রি ----------
+  async function loadPosts() {
+    try {
+      const d = await api('/api/posts');
+      state.posts = d.posts;
+      renderHistory();
+    } catch { /* লগইন হলে আলাদা দেখানো হয় */ }
+  }
+
+  function renderHistory() {
+    const box = $('#history');
+    if (!state.posts.length) { box.innerHTML = '<div class="empty">এখনও কোনো পোস্ট করা হয়নি।</div>'; return; }
+    box.innerHTML = state.posts.map((p) => {
+      const rows = p.platforms.map((k) => {
+        const r = p.results[k] || { status: 'queued' };
+        const link = r.url && /^https:\/\//.test(r.url) ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">দেখো</a>` : '';
+        return `<div class="pl"><span class="nm">${NAME[k]}</span><span class="badge ${r.status}">${STATUS_LABEL[r.status] || r.status}</span>${link}` +
+          (r.error ? `<div class="perr">${esc(r.error)}</div>` : '') +
+          (r.note ? `<div class="pnote">${esc(r.note)}</div>` : '') + '</div>';
+      }).join('');
+      const failed = p.platforms.some((k) => p.results[k] && p.results[k].status === 'failed');
+      const acts = [];
+      if (failed && p.canRetry) acts.push(`<button class="btn small-btn" data-retry="${p.id}" type="button">আবার চেষ্টা করো</button>`);
+      if (p.status !== 'sending') {
+        acts.push(`<button class="btn small-btn" data-del="${p.id}" type="button">${p.status === 'scheduled' ? 'বাতিল করো' : 'তালিকা থেকে মুছো'}</button>`);
+      }
+      const meta = p.status === 'scheduled' && p.publishAt ? 'পোস্ট হবে: ' + when(p.publishAt) : when(p.createdAt);
+      return `<div class="post"><div class="post-head"><b>${esc(p.title || p.originalName)}</b><span class="badge ${p.status}">${STATUS_LABEL[p.status] || p.status}</span></div>` +
+        `<div class="post-meta">${esc(meta)}</div>${rows}${acts.length ? `<div class="acts">${acts.join('')}</div>` : ''}</div>`;
+    }).join('');
+  }
+
+  $('#history').addEventListener('click', async (e) => {
+    const retry = e.target.closest('[data-retry]');
+    const del = e.target.closest('[data-del]');
+    try {
+      if (retry) {
+        await api(`/api/posts/${retry.dataset.retry}/retry`, { method: 'POST' });
+        toast('আবার পাঠানো হচ্ছে');
+        loadPosts();
+      } else if (del) {
+        if (!confirm('সত্যিই মুছবে? (প্ল্যাটফর্মে যা পোস্ট হয়ে গেছে সেটা মুছবে না)')) return;
+        await api(`/api/posts/${del.dataset.del}`, { method: 'DELETE' });
+        loadPosts();
+      }
+    } catch (err) {
+      toast(err.message, true);
+    }
+  });
+
+  // ---------- শুরু ----------
+  (async function init() {
+    const q = new URLSearchParams(location.search);
+    const connected = q.get('connected');
+    const connectErr = q.get('connect_error');
+    if (connected || connectErr) history.replaceState(null, '', '/');
+    try {
+      await showApp();
+      if (connected) toast('সংযুক্ত হয়েছে');
+      if (connectErr) toast('সংযোগ হয়নি: ' + connectErr, true);
+    } catch {
+      showLogin();
+    }
+  })();
+})();
